@@ -1,21 +1,21 @@
+import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages";
+import Jailbreak from "./pages/jailbreak";
+import CheatManager from "./pages/cheatmanager";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/CheatManager" component={CheatManager} />
+        <Route path="/Jailbreak" component={Jailbreak} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 
